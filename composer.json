@@ -1,5 +1,5 @@
 {
-    "name": "lxhopital/blaggins-hybrid",
+    "name": "selftawt/blaggins-hybrid",
     "require": {},
     "autoload": {
       "psr-4": {
