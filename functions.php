@@ -14,8 +14,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// This theme requires WordPress 6.4 or later.
-
 define( 'BLAGGINS_THEME_VERSION', '0.1.0' );
 define( 'BLAGGINS_THEME_INCLUDE', get_template_directory() . '/includes/' );
 
