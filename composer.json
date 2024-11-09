@@ -2,8 +2,6 @@
     "name": "selftawt/blaggins-hybrid",
     "require": {},
     "autoload": {
-      "psr-4": {
-
-      }
+		"psr-4": {}
     }
 }
