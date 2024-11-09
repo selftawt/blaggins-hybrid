@@ -7,10 +7,10 @@ function setup() {
         return __NAMESPACE__ . "\\$function";
     };
 
-    add_action( 'after_setup_theme', $fn( 'selftawt_theme_setup' ) );
+    add_action( 'after_setup_theme', $fn( 'blaggins_theme_setup' ) );
 
-    add_action( 'wp_enqueue_scripts', $fn( 'frontend_scripts' ) );
     add_action( 'wp_enqueue_scripts', $fn( 'frontend_styles' ) );
+	add_action( 'wp_enqueue_scripts', $fn( 'frontend_scripts' ) );
 
     add_action( 'admin_enqueue_scripts', $fn( 'admin_scripts' ) );
     add_action( 'admin_enqueue_scripts', $fn( 'admin_styles' ) );
@@ -18,7 +18,7 @@ function setup() {
     add_action( 'wp_head', $fn( 'embed_ct_css' ) );
 }
 
-function selftawt_theme_setup() {
+function blaggins_theme_setup() {
 	// Let WordPress handle the <title> tag in the document head.
     add_theme_support( 'title-tag' );
 
@@ -36,26 +36,31 @@ function selftawt_theme_setup() {
 
     add_theme_support( 'customize-selective-refresh-widgets' );
 
-    add_theme_support( 'html5', array(
-        'search-form',
-		'gallery',
-        'caption',
-	) );
+	add_theme_support(
+		'html5',
+		[
+			'search-form',
+			'gallery',
+			'caption',
 
-    /**
-     * Remove type="text/javascript" and type="text/css" from
-     * enqueued scripts and styles. Added in v5.3.
-     *
-     * @link https://make.wordpress.org/core/2019/10/15/miscellaneous-developer-focused-changes-in-5-3/
-     */
-    add_theme_support( 'html5', array( 'script', 'style' ) );
+			/**
+			* Remove type="text/javascript" and type="text/css" from enqueued scripts and styles.
+			* Added in v5.3.
+     		*
+     		* @link https://make.wordpress.org/core/2019/10/15/miscellaneous-developer-focused-changes-in-5-3/
+     		*/
+			'script',
+			'style',
 
-    /**
-     * Accessibility improvements to widgets outputting lists of links in v5.5
-     *
-     * @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
-     */
-    add_theme_support( 'html5', array( 'navigation-widgets' ) );
+			/**
+     		* Accessibility improvements to widgets outputting lists of links.
+			* Added in v5.5.
+     		*
+     		* @link https://make.wordpress.org/core/2020/07/09/accessibility-improvements-to-widgets-outputting-lists-of-links-in-5-5/
+     		*/
+			'navigation-widgets'
+		]
+	);
 
 	/**
 	 * Adding custom logo support.
@@ -63,7 +68,7 @@ function selftawt_theme_setup() {
 	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/#adding-custom-logo-support-to-your-theme
 	 */
 	add_theme_support( 'custom-logo', array(
-		'height'      => 70,  /* px */
+		'height'      =>  70, /* px */
 		'width'       => 350, /* px */
 		'flex-width'  => true,
 		'flex-height' => true,
@@ -74,12 +79,25 @@ function selftawt_theme_setup() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/post-formats/#supported-formats
 	 */
-    add_theme_support( 'post-formats', array(
-        'aside',
-        'image',
-        'gallery',
-        'video',
-    ) );
+    add_theme_support(
+		'post-formats',
+		[
+        	'aside',
+			'gallery',
+			'link',
+        	'image',
+			'quote',
+			'status',
+        	'video',
+		]
+	);
+
+    register_nav_menus(
+		[
+			'menu-header' => esc_html__( 'Header Menu', 'blaggins' ),
+        	'menu-footer' => esc_html__( 'Footer Menu', 'blaggins' ),
+		]
+	);
 
 	add_theme_support( 'editor-styles' );
 	// add_editor_style();
@@ -87,10 +105,6 @@ function selftawt_theme_setup() {
     remove_theme_support( 'block-templates' );
     remove_theme_support( 'core-block-patterns' );
 
-    register_nav_menus( array(
-        'menu-header' => esc_html__( 'Primary Menu', 'selftawt' ),
-        'menu-footer' => esc_html__( 'Footer Menu',  'selftawt' ),
-    ) );
 }
 
 function frontend_scripts() {
