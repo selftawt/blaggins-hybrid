@@ -1,0 +1,3 @@
+/* WP Core Breakpoints (used for the admin bar for example) */
+@custom-media --wp-small ( min-width: 600px );
+@custom-media --wp-medium-max (max-width: 782px);

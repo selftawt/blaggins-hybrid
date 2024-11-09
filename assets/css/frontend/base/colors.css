@@ -1,0 +1,22 @@
+/*
+  Make sure that the contrast ratio of text and interactive elements
+  meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+
+  https://www.w3.org/TR/WCAG22/#contrast-minimum
+  https://design-system.service.gov.uk/styles/colour/
+
+*/
+
+:root {
+  --theme-black-color: #0b0c0d;
+	--theme-gray-color: #505a5f;
+	--theme-red-color: #a51c30;
+	--theme-green-color: #00703c;
+	--theme-blue-color: #1d70b8;
+	--theme-yellow-color: #ffdd00;
+
+	--theme-link: #0033a6;
+	--theme-link-hover: #003078;
+
+	--theme-border-color: #b1b4b7;
+}
