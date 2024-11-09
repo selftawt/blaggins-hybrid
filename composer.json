@@ -1,4 +1,9 @@
 {
     "name": "lxhopital/blaggins-hybrid",
-    "require": {}
+    "require": {},
+    "autoload": {
+      "psr-4": {
+
+      }
+    }
 }
