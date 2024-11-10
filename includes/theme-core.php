@@ -10,9 +10,9 @@ function setup() {
     add_action( 'after_setup_theme', $fn( 'blaggins_theme_setup' ) );
 
     add_action( 'wp_enqueue_scripts', $fn( 'frontend_styles' ) );
-	add_action( 'wp_enqueue_scripts', $fn( 'frontend_scripts' ) );
+	add_action( 'wp_enqueue_scripts', $fn( 'frontend_script' ) );
 
-    add_action( 'admin_enqueue_scripts', $fn( 'admin_scripts' ) );
+    add_action( 'admin_enqueue_scripts', $fn( 'admin_script' ) );
     add_action( 'admin_enqueue_scripts', $fn( 'admin_styles' ) );
 
     add_action( 'wp_head', $fn( 'embed_ct_css' ) );
@@ -37,8 +37,7 @@ function blaggins_theme_setup() {
     add_theme_support( 'customize-selective-refresh-widgets' );
 
 	add_theme_support(
-		'html5',
-		[
+		'html5', [
 			'search-form',
 			'gallery',
 			'caption',
@@ -67,35 +66,35 @@ function blaggins_theme_setup() {
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/custom-logo/#adding-custom-logo-support-to-your-theme
 	 */
-	add_theme_support( 'custom-logo', array(
-		'height'      =>  70, /* px */
-		'width'       => 350, /* px */
-		'flex-width'  => true,
-		'flex-height' => true,
-	) );
+	add_theme_support(
+		'custom-logo', [
+			'height'      =>  70, /* px */
+			'width'       => 350, /* px */
+			'flex-width'  => true,
+			'flex-height' => true,
+		]
+	);
 
 	/**
 	 *
 	 *
 	 * @link https://developer.wordpress.org/themes/functionality/post-formats/#supported-formats
 	 */
-    add_theme_support(
-		'post-formats',
-		[
-        	'aside',
+	add_theme_support(
+		'post-formats', [
+			'aside',
 			'gallery',
 			'link',
-        	'image',
+			'image',
 			'quote',
 			'status',
-        	'video',
+			'video',
 		]
 	);
 
-    register_nav_menus(
-		[
+	register_nav_menus( [
 			'menu-header' => esc_html__( 'Header Menu', 'blaggins' ),
-        	'menu-footer' => esc_html__( 'Footer Menu', 'blaggins' ),
+			'menu-footer' => esc_html__( 'Footer Menu', 'blaggins' ),
 		]
 	);
 
@@ -107,7 +106,7 @@ function blaggins_theme_setup() {
 
 }
 
-function frontend_scripts() {
+function frontend_script() {
 
 }
 
@@ -116,11 +115,11 @@ function frontend_styles() {
 		'selftawt-theme',
 		get_theme_file_uri( '/assets/css/main.css' ),
 		array(),
-		SELFTAWT_THEME_VERSION
+		filemtime( get_theme_file_path( '/assets/css/main.css') )
 	);
 }
 
-function admin_scripts() {
+function admin_script() {
 
 }
 
