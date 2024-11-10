@@ -1,7 +1,16 @@
 {
     "name": "selftawt/blaggins-hybrid",
+	"type": "wordpress-theme",
+	"authors": [
+		{
+			"name": "Rey Sanchez",
+			"email": "rsodigitalph@gmail.com"
+		}
+	],
     "require": {},
     "autoload": {
-		"psr-4": {}
+		"psr-4": {
+			"Blaggins\\": "includes/"
+		}
     }
 }
