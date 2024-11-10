@@ -102,7 +102,6 @@ function blaggins_theme_setup() {
 
     remove_theme_support( 'block-templates' );
     remove_theme_support( 'core-block-patterns' );
-
 }
 
 function frontend_script() {
