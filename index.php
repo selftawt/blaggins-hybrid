@@ -8,14 +8,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header();
 
-if ( have_posts() ) {
-	while ( have_posts() ) {
+if ( have_posts() ) :
+	while ( have_posts() ) :
 		the_post();
 
-		the_title();
+		echo '<h2>'; the_title(); echo '</h2>';
 
 		the_content();
-	}
-}
+	endwhile;
+endif;
 
 get_footer();
