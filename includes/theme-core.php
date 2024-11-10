@@ -93,10 +93,9 @@ function blaggins_theme_setup() {
 	);
 
 	register_nav_menus( [
-			'menu-header' => esc_html__( 'Header Menu', 'blaggins' ),
-			'menu-footer' => esc_html__( 'Footer Menu', 'blaggins' ),
-		]
-	);
+		'menu-header' => esc_html__( 'Header Menu', 'blaggins' ),
+		'menu-footer' => esc_html__( 'Footer Menu', 'blaggins' ),
+	] );
 
 	add_theme_support( 'editor-styles' );
 	// add_editor_style();
