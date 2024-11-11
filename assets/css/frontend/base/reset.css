@@ -1,10 +1,10 @@
 /*
-| A combination of the modern CSS reset, Bootstrap's Reboot, and Tailwind's Preflight
-|
-| https://piccalil.li/blog/a-more-modern-css-reset/
-| https://getbootstrap.com/docs/5.3/content/reboot/
-|
-*/
+ * A combination of the modern CSS reset, Bootstrap's Reboot, and Tailwind's Preflight
+ *
+ * https://piccalil.li/blog/a-more-modern-css-reset/
+ * https://getbootstrap.com/docs/5.3/content/reboot/
+ *
+ */
 
 /* Box sizing rules */
 *,
@@ -15,47 +15,69 @@
 
 /* Set core body defaults */
 body {
-  background-color: #fff;
-  color: var(--theme-black-color);
+  background-color: var(--theme-color-white);
+  color: var(--theme-color-black);
   font-family: system-ui, -apple-system, sans-serif;
+  font-feature-settings: "kern","liga","calt";
+  font-kerning: normal;
   font-size: var(--wp--preset--font-size--normal);
   font-weight: 400;
   line-height: 1.5;
-  margin: 0;
-  min-height: 100vh;
+  text-rendering: optimizeLegibility;
   text-size-adjust: none;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
 }
 
+a {
+  color: var(--theme-color-link-initial);
+}
+
+a:hover {
+  color: var(--theme-color-link-hover);
+}
+
+/* Elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
 /* Remove default margin in favor of better control in authored CSS */
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-figure,
-blockquote,
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+p {
+  margin: 0;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  font-style: normal;
+  line-height: inherit;
+}
+
+small {
+  font-size: 0.875rem;
+}
+
+blockquote:where(:not(.wp-block)),
+figure:where(:not(.wp-block)),
 dl,
 dd,
 pre {
   margin: 0;
   overflow-wrap: break-word;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  text-wrap: balance;
-}
-
-p {
-  text-wrap: pretty;
 }
 
 /*
@@ -65,11 +87,6 @@ p {
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-}
-
-/* <a> elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -89,9 +106,16 @@ p img {
 	vertical-align: sub;
 }
 
-/* Inherit fonts for inputs and buttons */
-input,
+/* Set shorter line heights on headings and interactive elements */
 button,
+input,
+label {
+  line-height: 1.2;
+}
+
+/* Inherit fonts for inputs and buttons */
+button,
+input,
 textarea,
 select {
   font-family: inherit;
@@ -102,16 +126,6 @@ iframe {
 	border: 0;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: 1.2;
-}
 
 /* Make sure textareas without a rows attribute are not tiny */
 textarea:not([rows]) {
