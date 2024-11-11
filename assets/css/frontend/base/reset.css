@@ -1,19 +1,16 @@
 /*
- * A combination of the modern CSS reset, Bootstrap's Reboot, and Tailwind's Preflight
+ * This is my own CSS reset.
  *
  * https://piccalil.li/blog/a-more-modern-css-reset/
  * https://getbootstrap.com/docs/5.3/content/reboot/
- *
  */
 
-/* Box sizing rules */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Set core body defaults */
 body {
   background-color: var(--theme-color-white);
   color: var(--theme-color-black);
@@ -102,8 +99,8 @@ svg {
 
 li img,
 p img {
-	display: inline-block;
-	vertical-align: sub;
+  display: inline-block;
+  vertical-align: sub;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -123,7 +120,7 @@ select {
 }
 
 iframe {
-	border: 0;
+  border: 0;
 }
 
 
@@ -139,5 +136,5 @@ textarea:not([rows]) {
 
 /* Create a root stacking context */
 .wp-site-blocks {
-	isolation: isolate;
+  isolation: isolate;
 }
