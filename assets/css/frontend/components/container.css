@@ -1,4 +1,4 @@
-body {
+.container__body-inner {
   display: flex;
   flex-direction: column;
   position: relative;
