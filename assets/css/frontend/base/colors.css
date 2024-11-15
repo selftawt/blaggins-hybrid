@@ -1,10 +1,9 @@
-/*
-  Make sure that the contrast ratio of text and interactive elements
-  meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
-
-  https://www.w3.org/TR/WCAG22/#contrast-minimum
-  https://design-system.service.gov.uk/styles/colour/
-
+/**
+* Make sure that the contrast ratio of text and interactive elements
+* meets level AA of the Web Content Accessibility Guidelines (WCAG 2.2).
+*
+* https://www.w3.org/TR/WCAG22/#contrast-minimum
+* https://design-system.service.gov.uk/styles/colour/
 */
 
 :root {
