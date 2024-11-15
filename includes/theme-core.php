@@ -109,12 +109,12 @@ function frontend_script() {
 }
 
 function frontend_styles() {
-	// wp_enqueue_style(
-	// 	'blaggins-hybrid',
-	// 	get_theme_file_uri( '/assets/css/main.css' ),
-	// 	array(),
-	// 	filemtime( get_theme_file_path( '/assets/css/main.css') )
-	// );
+	wp_enqueue_style(
+		'blaggins-hybrid',
+		get_theme_file_uri( '/assets/css/main.css' ),
+		array(),
+		filemtime( get_theme_file_path( '/assets/css/main.css') )
+	);
 }
 
 function admin_script() {
