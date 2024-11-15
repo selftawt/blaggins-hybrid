@@ -1,4 +1,7 @@
 <?php
+/**
+ *
+ */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
@@ -28,10 +31,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="container__body-inner">
 <?php wp_body_open(); ?>
 <a id="skipnav" class="screen-reader-text" href="#main"><?php esc_html_e( 'Skip to main content', 'blaggins' ); ?></a>
+<div class="container-body-inner">
 <?php get_template_part( 'template-parts/header/header-site' ); ?>
-<main id="main">
+<main id="main" tabindex="-1">
 
 
