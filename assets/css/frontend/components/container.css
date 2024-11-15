@@ -1,7 +1,44 @@
-.container__body-inner {
+
+.container-body-inner {
   display: flex;
   flex-direction: column;
   position: relative;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 100vh;
   overflow: clip;
+  max-width: var(--wp--style--global--wide-size);
 }
+
+#header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90px;
+}
+
+.site-header__logo {
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.header__menu,
+.footer__menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.header__menu {
+  justify-content: flex-end;
+}
+
+.entry-header,
+.entry-content {
+  max-width: var(--wp--style--global--content-size);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.entry-header {
+  margin-bottom: 2.5rem;
+}
+
