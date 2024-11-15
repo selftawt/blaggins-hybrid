@@ -1,9 +1,15 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+/**
+ * Blaggins Hybrid
+ *
+ * @package Blaggins\Templates
+ * @author	Rey Sanchez
+ * @license	GPL-3.0
+ * @link	https://github.com/selftawt/blaggins-hybrid
+ */
 ?>
-</main>
+
+</main><!-- #main -->
 <footer id="footer" itemscope itemtype="https://schema.org/WPFooter">
 <?php if ( has_nav_menu( 'menu-footer' ) ) : ?>
 	<div class="site-footer__menu">
