@@ -26,7 +26,7 @@
 <?php endif; ?>
 	<div class="site-footer__copyright"><p>© <?php bloginfo( 'name' ); ?></p></div>
 </footer>
+</div><!-- .container-body-inner -->
 <?php wp_footer(); ?>
-</div><!-- .container__body-inner -->
 </body>
 </html>
