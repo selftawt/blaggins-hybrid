@@ -37,11 +37,6 @@ a:hover {
   color: var(--theme-color-link-hover);
 }
 
-/* Elements that don't have a class get default styles */
-a:not([class]) {
-	text-decoration-skip-ink: auto;
-}
-
 /* Remove default margin in favor of better control in authored CSS */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
@@ -49,7 +44,6 @@ h1, h2, h3, h4, h5, h6 {
   margin-block-start: 0;
   margin-block-end: 0;
   overflow-wrap: break-word;
-  text-wrap: balance;
 }
 
 p {
